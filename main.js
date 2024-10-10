@@ -13,7 +13,7 @@ document.getElementById("num4").innerHTML = num4
 document.getElementById("num5").innerHTML = num5
 
 
-let countDown = 30
+let countDown = 3
 
 let clock = setInterval(() => {
     if (countDown > 0 ){
@@ -21,6 +21,7 @@ let clock = setInterval(() => {
         document.getElementById("countDown").innerHTML = countDown
         
     } else {
+        document.querySelector(".w-25").className = "d-flex"
         clearInterval(clock)
     }
 
@@ -29,7 +30,7 @@ let clock = setInterval(() => {
 
 //faccio scomparire i 5 numeri dopo 30 secondi
 
-setTimeout(clearRabdomNumber, 30000)
+setTimeout(clearRabdomNumber, 3000)
 
 function clearRabdomNumber() {
 
@@ -39,5 +40,42 @@ document.getElementById("num3").innerHTML = null
 document.getElementById("num4").innerHTML = null
 document.getElementById("num5").innerHTML = null
 }
+
+
+//raccolgo i numeri inseriti in un array
+
+let button = document.getElementById("button")
+button.addEventListener("click", function (){
+    
+    let userNumArray = []
+    let userNumArrayNumber = userNumArray.map(Number)
+    let userNum1=document.getElementById("userNum1").innerHTML.value
+    userNumArray.push(userNum1)
+    let userNum2=document.getElementById("userNum2").innerHTML.value
+    userNumArray.push(userNum2)
+    let userNum3=document.getElementById("userNum3").innerHTML.value
+    userNumArray.push(userNum3)
+    let userNum4=document.getElementById("userNum4").innerHTML.value
+    userNumArray.push(userNum4)
+    let userNum5=document.getElementById("userNum5").innerHTML.value
+    userNumArray.push(userNum5)
+
+    
+    let result = document.getElementById("result")
+    result.innerHTML = userNumArrayNumber
+
+    console.log(userNumArray);
+    
+    
+
+
+} )
+
+
+
+
+
+
+
     
 
