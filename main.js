@@ -6,6 +6,8 @@ let num3 = Math.floor(Math.random()*10 + 1)
 let num4 = Math.floor(Math.random()*10 + 1)
 let num5 = Math.floor(Math.random()*10 + 1)
 
+
+
 document.getElementById("num1").innerHTML = num1
 document.getElementById("num2").innerHTML = num2
 document.getElementById("num3").innerHTML = num3
@@ -34,11 +36,11 @@ setTimeout(clearRabdomNumber, 10000)
 
 function clearRabdomNumber() {
 
-document.getElementById("num1").innerHTML = null
-document.getElementById("num2").innerHTML = null
-document.getElementById("num3").innerHTML = null
-document.getElementById("num4").innerHTML = null
-document.getElementById("num5").innerHTML = null
+document.getElementById("num1").innerHTML.style.color = "white"
+document.getElementById("num2").innerHTML.style.color = "white"
+document.getElementById("num3").innerHTML.style.color = "white"
+document.getElementById("num4").innerHTML.style.color = "white"
+document.getElementById("num5").innerHTML.style.color = "white"
 }
 
 
@@ -61,26 +63,17 @@ button.addEventListener("click", function (){
     userNumArray.push(userNum5)
 
     let counter = 0
+    let okNumbers = document.getElementById("okNumbers")
+    for (let i=0; i<userNumArray.length; i++){
+        let singleArrNum = userNumArray[i]
+        if (singleArrNum == num1){
+                counter++
+                okNumbers.innerHTML = num1
 
-    if (userNumArray.includes(num1)){
-        counter++
-        result.innerHTML = num1
-    } else if (userNumArray.includes(num2)){
-        counter++
-        result.innerHTML = num2
-    } else if (userNumArray.includes(num3)){
-        counter++
-        result.innerHTML = num3
-    } else if (userNumArray.includes(num4)){
-        counter++
-        result.innerHTML = num4
-    }  else if (userNumArray.includes(num5)){
-        counter++
-        result.innerHTML = num5
-    } 
+
+        }
     
-    
-    
+    }
     let result = document.getElementById("result")
     result.innerHTML = counter
 } )
@@ -91,5 +84,22 @@ button.addEventListener("click", function (){
 
 
 
+
+// if (userNumArray.includes(num1)){
+//     counter++
+//     okNumbers.innerHTML = num1
+// } else if (userNumArray.includes(num2)){
+//     counter++
+//     result.innerHTML = num2
+// } else if (userNumArray.includes(num3)){
+//     counter++
+//     result.innerHTML = num3
+// } else if (userNumArray.includes(num4)){
+//     counter++
+//     result.innerHTML = num4
+// }  else if (userNumArray.includes(num5)){
+//     counter++
+//     result.innerHTML = num5
+// } 
     
 
