@@ -13,7 +13,7 @@ document.getElementById("num4").innerHTML = num4
 document.getElementById("num5").innerHTML = num5
 
 
-let countDown = 3
+let countDown = 10
 
 let clock = setInterval(() => {
     if (countDown > 0 ){
@@ -30,7 +30,7 @@ let clock = setInterval(() => {
 
 //faccio scomparire i 5 numeri dopo 30 secondi
 
-setTimeout(clearRabdomNumber, 3000)
+setTimeout(clearRabdomNumber, 10000)
 
 function clearRabdomNumber() {
 
@@ -48,27 +48,41 @@ let button = document.getElementById("button")
 button.addEventListener("click", function (){
     
     let userNumArray = []
-    let userNumArrayNumber = userNumArray.map(Number)
-    let userNum1=document.getElementById("userNum1").innerHTML.value
+   
+    let userNum1=document.getElementById("userNum1").value
     userNumArray.push(userNum1)
-    let userNum2=document.getElementById("userNum2").innerHTML.value
+    let userNum2=document.getElementById("userNum2").value
     userNumArray.push(userNum2)
-    let userNum3=document.getElementById("userNum3").innerHTML.value
+    let userNum3=document.getElementById("userNum3").value
     userNumArray.push(userNum3)
-    let userNum4=document.getElementById("userNum4").innerHTML.value
+    let userNum4=document.getElementById("userNum4").value
     userNumArray.push(userNum4)
-    let userNum5=document.getElementById("userNum5").innerHTML.value
+    let userNum5=document.getElementById("userNum5").value
     userNumArray.push(userNum5)
 
+    let counter = 0
+
+    if (userNumArray.includes(num1)){
+        counter++
+        result.innerHTML = num1
+    } else if (userNumArray.includes(num2)){
+        counter++
+        result.innerHTML = num2
+    } else if (userNumArray.includes(num3)){
+        counter++
+        result.innerHTML = num3
+    } else if (userNumArray.includes(num4)){
+        counter++
+        result.innerHTML = num4
+    }  else if (userNumArray.includes(num5)){
+        counter++
+        result.innerHTML = num5
+    } 
+    
+    
     
     let result = document.getElementById("result")
-    result.innerHTML = userNumArrayNumber
-
-    console.log(userNumArray);
-    
-    
-
-
+    result.innerHTML = counter
 } )
 
 
