@@ -11,9 +11,25 @@ document.getElementById("num2").innerHTML = num2
 document.getElementById("num3").innerHTML = num3
 document.getElementById("num4").innerHTML = num4
 document.getElementById("num5").innerHTML = num5
+
+
+let countDown = 30
+
+let clock = setInterval(() => {
+    if (countDown > 0 ){
+        --countDown
+        document.getElementById("countDown").innerHTML = countDown
+        
+    } else {
+        clearInterval(clock)
+    }
+
+}, 1000);
+
+
 //faccio scomparire i 5 numeri dopo 30 secondi
 
-setTimeout(clearRabdomNumber, 3000)
+setTimeout(clearRabdomNumber, 30000)
 
 function clearRabdomNumber() {
 
@@ -24,3 +40,4 @@ document.getElementById("num4").innerHTML = null
 document.getElementById("num5").innerHTML = null
 }
     
+
